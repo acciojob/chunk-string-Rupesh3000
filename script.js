@@ -1,10 +1,8 @@
 function stringChop(str, size) {
-  // Check if str is null
   if (str === null) {
     return [];
   }
 
-  // Convert size to number (prompt se string aata hai)
   size = Number(size);
 
   let chunks = [];

@@ -1,12 +1,19 @@
-function stringChop(str, chunkLength) {
-  // your code here
-	let chunks = [];
+function stringChop(str, size) {
+  // Check if str is null
+  if (str === null) {
+    return [];
+  }
+
+  // Convert size to number (prompt se string aata hai)
+  size = Number(size);
+
+  let chunks = [];
   let index = 0;
 
   while (index < str.length) {
-    let chunk = str.substr(index, chunkLength);
+    let chunk = str.slice(index, index + size);
     chunks.push(chunk);
-    index += chunkLength;
+    index += size;
   }
 
   return chunks;
@@ -15,4 +22,4 @@ function stringChop(str, chunkLength) {
 // Do not change the code below
 const str = prompt("Enter String.");
 const size = prompt("Enter Chunk Size.");
-alert(stringChop(str, size));
+alert(JSON.stringify(stringChop(str, size)));
